@@ -1,0 +1,15 @@
+
+---
+ - hosts: localhost
+   vars_prompt:
+           name: user_name
+           prompt: Enter the value of username
+           name: password
+           prompt: Enter the value of password
+           private: false
+   tasks:
+   - debug:
+      msg:
+              - "The value of username is : {{ user_name }}"
+              - "The value of password is: {{ password }}"   
+

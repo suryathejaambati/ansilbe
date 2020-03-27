@@ -1,0 +1,14 @@
+---
+ - hosts: all
+   gather_facts: true
+   become: yes
+   tasks:
+     - import_tasks: install_webserver_RedHat.yaml
+       when: ansible_os_family=="RedHat"  
+     - import_tasks: install_webserver_Debian.yaml
+       when: ansible_os_family=="Debian"
+     - import_tasks: install_git_RedHat.yaml
+       when: ansible_os_family=="RedHat"
+     - import_tasks: install_git_Debian.yaml
+       when: ansible_os_family=="Debian"
+    

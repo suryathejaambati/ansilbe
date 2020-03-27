@@ -1,0 +1,7 @@
+---
+ - hosts: all
+   gather_facts: true
+   become: yes
+   tasks:
+     - include_tasks: install_webserver_{{ ansible_os_family }}.yaml
+     - include_tasks: install_git_{{ ansible_os_family }}.yaml

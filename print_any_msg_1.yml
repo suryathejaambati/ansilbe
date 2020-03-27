@@ -1,0 +1,11 @@
+---
+ - name: This is simple playbook to display the messages
+   hosts: localhost
+   tasks:
+     - name: Print a msg with parameter
+       debug:
+         msg:
+          - "I am suryatheja"
+          - "I want to be cloud architect"
+          - "I want to change the company"
+

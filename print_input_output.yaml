@@ -1,0 +1,14 @@
+---
+ - name: Print the value
+   hosts: localhost
+   vars:
+     x: 45
+     my_name: Surya
+   tasks:
+   - debug: 
+      msg:
+       - "The value of x is : {{ x }}"
+       - "The value of My_name is : {{ my_name }}"
+
+
+           

@@ -1,0 +1,8 @@
+---
+ - hosts: localhost
+   gather_facts: false
+   become: yes
+   tasks:
+   - yum:
+      name: "{{ pkg }}"
+      state: "{{req_state}}"

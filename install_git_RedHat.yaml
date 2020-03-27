@@ -1,0 +1,6 @@
+---
+ - name: Install git on Redhat family
+   yum:
+     name: git
+     state: present
+

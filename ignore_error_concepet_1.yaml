@@ -1,0 +1,12 @@
+---
+ - hosts: localhost
+   gather_facts: false
+   tasks:
+     - block:             
+         - command: "ls /home/ansadmin/nonprod/"
+           register: system_out
+         - command: "ls /home/ansadmin/prod" 
+           register: system1_out
+           ignore_errors: yes
+         - debug: var=system_out
+         - debug: var=system1_out

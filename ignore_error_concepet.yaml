@@ -1,0 +1,14 @@
+---
+ - hosts: localhost
+   gather_facts: false
+   tasks:
+     block:             
+       command: "ls /home/ansadmin/nonprod/"
+       register: system_out
+     rescue:
+       debug:
+         msg: " The give path is not  valid path"
+     always:
+       debug:
+         msg: " Completed "    
+

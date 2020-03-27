@@ -1,0 +1,38 @@
+--- 
+- 
+  hosts: all
+  tasks: 
+    - 
+      block: 
+        - 
+          name: "install httpd for Redhat os family"
+          yum: 
+            name: httpd
+            state: present
+        - 
+          name: "Start the httpd"
+          service: 
+            name: httpd
+            state: started
+    - 
+      when: ansible_os_family=="RedHat"
+        become: yes
+    - 
+      block: 
+        - 
+          apt: 
+            name: apache2
+            state: present
+          name: "install apache for Debian os family"
+        - 
+          name: "Start the apache"
+          service: 
+            name: apache2
+            state: started
+    - 
+      when: ansible_os_family=="Debian"
+        become: yes
+    - 
+      debug: 
+        msg: "Successfully completed all tasks"
+

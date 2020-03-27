@@ -1,0 +1,10 @@
+---
+ - hosts: all
+   gather_facts: true
+   become: yes
+   tasks:
+     - include_vars: required_variables_for_{{ ansible_os_family }}.yaml
+     - debug: 
+        msg: " pkg name {{ pkg }} "
+
+

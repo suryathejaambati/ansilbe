@@ -1,0 +1,11 @@
+---
+ - hosts: localhost
+   tasks:
+   - debug:
+      msg: " Validate the verbosity info"
+   - debug:
+      verbosity: 2
+
+
+
+

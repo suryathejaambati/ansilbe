@@ -1,0 +1,6 @@
+---
+ - name: Install Git on Redhat family
+   apt:
+     name: git
+     state: present
+

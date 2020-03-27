@@ -1,0 +1,12 @@
+---
+ - hosts: localhost
+   vars_prompt:
+           name: y
+           prompt: Enter the value of y
+           private: false
+   tasks:
+   - debug: 
+      msg:
+              - " The value of y is : {{ y }}"
+
+

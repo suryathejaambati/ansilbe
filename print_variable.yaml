@@ -1,0 +1,8 @@
+---
+ - name: Print the computer name
+   hosts: webserver
+   tasks:
+   - debug:
+      msg: "hostname is {{ inventory_hostname }}"
+
+
