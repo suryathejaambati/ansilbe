@@ -1,0 +1,20 @@
+---
+- hosts: node
+  become: yes
+  gather_facts: true
+  tasks:
+  - name: Download the git project
+    git:
+      repo: "https://github.com/suryathejaambati/spring3-mvc-maven-xml-hello-world.git"
+      dest: /home/ubuntu/hello
+    tags: git Download
+  - name: Packaging the maven build
+    shell: "mvn clean package"
+    args:
+      chdir: /home/ubuntu/hello
+  - name: Copy the artifacts to tomcat server
+    copy:
+      src: /home/ubuntu/hello/target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war 
+      dest: /home/ubuntu/apache-tomcat-8.5.54/apache-tomcat-8.5.54/webapps/
+      remote_src: true
+

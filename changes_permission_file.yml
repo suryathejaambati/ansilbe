@@ -1,0 +1,7 @@
+---
+- hosts: node
+  tasks:
+  - name:  Create a file with change the permissions
+    file:
+      dest: "/home/ubuntu/file.txt"
+      mode: 0777

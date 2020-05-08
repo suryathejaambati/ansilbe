@@ -1,0 +1,14 @@
+---
+- hosts: node
+  tasks:
+  - name:  Create multiple files at a time
+    copy:
+      dest: "{{ item }}"
+      content: |
+         Multiple files created at a time
+    with_items:
+    - /home/ubuntu/practise/file1.txt
+    - /home/ubuntu/practise/file2.txt
+    - /home/ubuntu/practise/file3.txt
+    - /home/ubuntu/practise/file4.txt
+    - /home/ubuntu/practise/file5.txt

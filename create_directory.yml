@@ -1,0 +1,9 @@
+---
+- hosts: node
+  tasks:
+  - name:  Create a file with change the permissions
+    file:
+      dest: "/home/ubuntu/practise"
+      mode: 0777
+      state: directory
+

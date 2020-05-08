@@ -1,0 +1,8 @@
+---
+- hosts: node
+  become: true
+  gather_facts: true
+  remote_user: ubuntu
+  become_method: sudo
+  roles:
+    - tomcat    

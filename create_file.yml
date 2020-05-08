@@ -1,0 +1,14 @@
+---
+- hosts: node
+  tasks:
+  - name: " Create a new file in node "
+    copy:
+    # file:
+      dest: "/home/ubuntu/file.txt"
+      # state: touch
+      #mode: 0755
+      content: |
+              suryatheja 
+              Want to devops and cloud architect
+              Bangalore
+

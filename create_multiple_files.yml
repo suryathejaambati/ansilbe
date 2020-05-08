@@ -1,0 +1,15 @@
+
+---
+- hosts: node
+  tasks:
+  - name:  Create multiple files at a time
+    file:
+      dest: "{{ item }}"
+      mode: 0775
+      state: touch
+    with_items:
+    - /home/ubuntu/practise/file1.txt
+    - /home/ubuntu/practise/file2.txt
+    - /home/ubuntu/practise/file3.txt
+    - /home/ubuntu/practise/file4.txt
+    - /home/ubuntu/practise/file5.txt

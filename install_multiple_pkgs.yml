@@ -1,0 +1,66 @@
+---
+- hosts: node
+  become: yes
+  tasks:
+  - name: install git packages
+    apt:
+      name: git
+      state: latest
+    tags: installGit
+  - name: Uninstall the git
+    apt:
+      name: git
+      state: absent
+    tags: uninstallGit
+  - name: InstallDocker
+    pip:
+      name: docker
+      state: present
+    tags: Dinstall
+  - name: start the docker service
+    service:
+      name: docker
+      state: started
+    tags: Dstart  
+  - name: start the docker service
+    service:
+      name: docker
+      state: started
+    tags: Dstop
+  - name: UninstallDocker
+    apt:
+      name: docker.io
+      state: absent
+    tags: Duninstall
+  - name: Install Webserver
+    apt:
+      name: apache2
+      state: present
+    tags: WebserverI
+  - name: Install java
+    apt:
+      name: default-jdk
+      state: present
+    tags: javai
+  - name: Uninstall Java
+    apt:
+      name: default-jdk
+      state: absent
+    tags: javau
+  - name: install java8
+    apt:
+      name: openjdk-8-jdk
+      state: present
+    tags: java8i
+  - name: unsinstall java8
+    apt:
+      name: openjdk-8-jdk
+      state: absent
+    tags: java8u
+  - name: install Maven
+    apt:
+      name: maven
+      state: present
+    tags: maveni  
+
+
